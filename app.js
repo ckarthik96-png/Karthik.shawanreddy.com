@@ -273,14 +273,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Page Loader removal
     const loader = document.getElementById('page-loader');
     if (loader) {
-        window.addEventListener('load', () => {
+        const removeLoader = () => {
             setTimeout(() => {
                 loader.style.opacity = '0';
                 setTimeout(() => {
                     loader.style.display = 'none';
                 }, 500);
             }, 300);
-        });
+        };
+        
+        if (document.readyState === 'complete') {
+            removeLoader();
+        } else {
+            window.addEventListener('load', removeLoader);
+        }
+    }
     // Privacy and Terms Modal Toggle
     const privacyLink = document.getElementById('privacy-link');
     const termsLink = document.getElementById('terms-link');
