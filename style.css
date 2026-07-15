@@ -205,9 +205,28 @@ header.scrolled {
 }
 
 .logo svg {
-    color: var(--primary);
     width: 32px;
     height: 32px;
+}
+
+.logo svg circle:first-of-type {
+    transform-origin: center;
+    animation: rotateLogoOuter 15s linear infinite;
+}
+
+.logo svg circle:last-of-type {
+    transform-origin: center;
+    animation: rotateLogoInner 8s linear reverse infinite;
+}
+
+@keyframes rotateLogoOuter {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes rotateLogoInner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .nav-links {

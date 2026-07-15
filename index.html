@@ -71,10 +71,21 @@
     <header>
         <div class="container nav-container">
             <a href="#home" class="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                    <polyline points="2 17 12 22 22 17"></polyline>
-                    <polyline points="2 12 12 17 22 12"></polyline>
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <defs>
+                        <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="var(--primary)" />
+                            <stop offset="100%" stop-color="var(--accent)" />
+                        </linearGradient>
+                        <linearGradient id="logo-grad-inner" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="var(--secondary)" />
+                            <stop offset="100%" stop-color="var(--primary)" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="50" cy="50" r="42" stroke="url(#logo-grad)" stroke-width="7" stroke-dasharray="25 12 5 12" />
+                    <circle cx="50" cy="50" r="28" stroke="var(--secondary)" stroke-width="4" stroke-dasharray="35 15" />
+                    <polygon points="50 36, 62 43, 62 57, 50 64, 38 57, 38 43" fill="url(#logo-grad-inner)" />
+                    <circle cx="50" cy="50" r="5" fill="#ffffff" />
                 </svg>
                 Shawan Tech
             </a>
@@ -1130,10 +1141,21 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <a href="#home" class="logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                        <polyline points="2 17 12 22 22 17"></polyline>
-                        <polyline points="2 12 12 17 22 12"></polyline>
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <defs>
+                            <linearGradient id="logo-grad-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="var(--primary)" />
+                                <stop offset="100%" stop-color="var(--accent)" />
+                            </linearGradient>
+                            <linearGradient id="logo-grad-footer-inner" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="var(--secondary)" />
+                                <stop offset="100%" stop-color="var(--primary)" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="42" stroke="url(#logo-grad-footer)" stroke-width="7" stroke-dasharray="25 12 5 12" />
+                        <circle cx="50" cy="50" r="28" stroke="var(--secondary)" stroke-width="4" stroke-dasharray="35 15" />
+                        <polygon points="50 36, 62 43, 62 57, 50 64, 38 57, 38 43" fill="url(#logo-grad-footer-inner)" />
+                        <circle cx="50" cy="50" r="5" fill="#ffffff" />
                     </svg>
                     Shawan Tech
                 </a>
