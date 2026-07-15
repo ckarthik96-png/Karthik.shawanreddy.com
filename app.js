@@ -230,28 +230,48 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerText;
             submitBtn.disabled = true;
-            submitBtn.innerText = 'Sending...';
+            submitBtn.innerText = 'Routing to WhatsApp...';
 
-            // Simulate form submission delay
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value || 'Not provided';
+            const serviceSelect = document.getElementById('service-interest');
+            const service = serviceSelect.options[serviceSelect.selectedIndex].text;
+            const messageDetails = document.getElementById('message').value;
+
+            // Format message template for WhatsApp
+            const formattedMessage = `*New Business Inquiry (Shawan Tech)*\n\n` +
+                                     `👤 *Name:* ${name}\n` +
+                                     `✉️ *Email:* ${email}\n` +
+                                     `📞 *Phone:* ${phone}\n` +
+                                     `🛠️ *Service:* ${service}\n\n` +
+                                     `📝 *Inquiry Details:*\n${messageDetails}`;
+
+            // Create WhatsApp Link
+            const whatsappUrl = `https://wa.me/919791271479?text=${encodeURIComponent(formattedMessage)}`;
+
+            // Simulate slight processing state
             setTimeout(() => {
                 submitBtn.disabled = false;
                 submitBtn.innerText = originalBtnText;
 
-                // Show dynamic success state
+                // Show success block and clear form
                 formResponse.classList.add('visible');
                 formResponse.innerHTML = `
                     <div class="success-box">
                         <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <p>Thank you! Your message has been sent successfully. We will get back to you shortly.</p>
+                        <p>Inquiry captured! Opening WhatsApp to send your details...</p>
                     </div>
                 `;
                 contactForm.reset();
 
-                // Clear feedback after 6 seconds
+                // Open WhatsApp in a new tab
+                window.open(whatsappUrl, '_blank');
+
                 setTimeout(() => {
                     formResponse.classList.remove('visible');
                 }, 6000);
-            }, 1500);
+            }, 1000);
         });
     }
 
