@@ -265,8 +265,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 contactForm.reset();
 
-                // Open WhatsApp in a new tab
-                window.open(whatsappUrl, '_blank');
+                // Redirect directly to WhatsApp (bypasses pop-up blockers)
+                window.location.href = whatsappUrl;
 
                 setTimeout(() => {
                     formResponse.classList.remove('visible');
