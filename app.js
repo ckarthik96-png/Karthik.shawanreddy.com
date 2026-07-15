@@ -281,5 +281,43 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 500);
             }, 300);
         });
+    // Privacy and Terms Modal Toggle
+    const privacyLink = document.getElementById('privacy-link');
+    const termsLink = document.getElementById('terms-link');
+    const privacyModal = document.getElementById('privacy-modal');
+    const termsModal = document.getElementById('terms-modal');
+    const closePrivacy = document.getElementById('close-privacy');
+    const closeTerms = document.getElementById('close-terms');
+
+    const openModal = (modal) => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = (modal) => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    if (privacyLink && privacyModal) {
+        privacyLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal(privacyModal);
+        });
+        closePrivacy.addEventListener('click', () => closeModal(privacyModal));
+        privacyModal.addEventListener('click', (e) => {
+            if (e.target === privacyModal) closeModal(privacyModal);
+        });
+    }
+
+    if (termsLink && termsModal) {
+        termsLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal(termsModal);
+        });
+        closeTerms.addEventListener('click', () => closeModal(termsModal));
+        termsModal.addEventListener('click', (e) => {
+            if (e.target === termsModal) closeModal(termsModal);
+        });
     }
 });
