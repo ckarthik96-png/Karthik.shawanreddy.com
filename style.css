@@ -532,59 +532,48 @@ section {
     align-items: center;
 }
 
-.hero-interactive-cube {
-    width: 280px;
-    height: 280px;
-    background: radial-gradient(circle, var(--primary-glow) 0%, rgba(0,0,0,0) 70%);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero-image-wrapper {
     position: relative;
-    animation: pulseCube 4s infinite alternate ease-in-out;
-}
-
-.hero-interactive-cube::after {
-    content: '';
-    position: absolute;
-    width: 140px;
-    height: 140px;
-    border: 2px dashed var(--secondary);
-    border-radius: 50%;
-    animation: rotateDash 20s linear infinite;
-}
-
-.hero-interactive-cube::before {
-    content: '';
-    position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    max-width: 460px;
+    border-radius: 20px;
+    overflow: hidden;
     border: 1px solid var(--border-glass);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    animation: morphGlow 8s infinite alternate ease-in-out;
+    box-shadow: var(--shadow-lg), 0 0 30px var(--primary-glow);
+    animation: floatImage 6s ease-in-out infinite;
+    background-color: var(--bg-secondary);
 }
 
-.hero-interactive-cube svg {
-    width: 80px;
-    height: 80px;
-    color: var(--primary);
-    filter: drop-shadow(0 0 10px var(--primary));
-    z-index: 1;
+.hero-banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
 }
 
-@keyframes pulseCube {
-    0% { transform: scale(0.95); }
-    100% { transform: scale(1.05); }
+.hero-image-wrapper:hover .hero-banner-image {
+    transform: scale(1.04);
 }
 
-@keyframes rotateDash {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.hero-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(185deg, rgba(11, 15, 25, 0) 60%, rgba(11, 15, 25, 0.4) 100%);
+    pointer-events: none;
 }
 
-@keyframes morphGlow {
-    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: rotate(0deg); }
-    100% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; transform: rotate(360deg); }
+[data-theme="light"] .hero-image-overlay {
+    background: linear-gradient(185deg, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.3) 100%);
+}
+
+@keyframes floatImage {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
 }
 
 /* Stats section */
