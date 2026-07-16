@@ -995,16 +995,16 @@ section {
 }
 
 .brand-card {
-    padding: 1rem;
+    padding: 1.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70px;
+    height: 90px;
 }
 
 .brand-card svg {
-    max-height: 28px;
-    max-width: 90%;
+    max-height: 38px;
+    max-width: 92%;
     fill: currentColor;
     opacity: 0.6;
     filter: grayscale(1);
