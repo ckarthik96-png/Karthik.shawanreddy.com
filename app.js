@@ -62,8 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sticky Navigation on Scroll
     const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
+    const handleScroll = () => {
+        const scrolled = window.scrollY > 10 || document.documentElement.scrollTop > 10;
+        if (scrolled) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
@@ -72,13 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show/Hide Back to Top button
         const backToTop = document.getElementById('back-to-top');
         if (backToTop) {
-            if (window.scrollY > 500) {
+            if (window.scrollY > 500 || document.documentElement.scrollTop > 500) {
                 backToTop.classList.add('visible');
             } else {
                 backToTop.classList.remove('visible');
             }
         }
-    });
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // run once on load
 
     // Back to Top functionality
     const backToTopBtn = document.getElementById('back-to-top');
