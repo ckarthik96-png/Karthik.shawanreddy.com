@@ -4,96 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Downloads Center | Shawan Tech Solutions</title>
-    <meta name="description" content="Access our official company publications, service sheets, and product sheets.">
+    <meta name="description" content="Access our official company publications, service sheets, and product catalog — free PDF downloads.">
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'><circle cx='50' cy='50' r='42' stroke='%232563eb' stroke-width='8' stroke-dasharray='25 12' /><circle cx='50' cy='50' r='28' stroke='%233b82f6' stroke-width='4' /><polygon points='50 36, 62 43, 62 57, 50 64, 38 57, 38 43' fill='%232563eb' /><circle cx='50' cy='50' r='5' fill='%23ffffff' /></svg>">
     <style>
-        .downloads-hero {
+        .dl-hero {
             text-align: center;
-            padding: 5rem 1.5rem 3rem;
-            max-width: 800px;
-            margin: 0 auto;
+            padding: 5rem 1.5rem 3.5rem;
         }
-        .downloads-container {
+        .dl-hero-badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            color: var(--primary);
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.35rem 0.85rem;
+            border-radius: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+        .dl-list {
             max-width: 900px;
             margin: 0 auto 6rem;
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 0;
             padding: 0 1.5rem;
-        }
-        .download-item-card {
-            background-color: rgba(17, 24, 39, 0.4);
             border: 1px solid var(--border-glass);
-            border-radius: 1rem;
-            padding: 2rem;
+            border-radius: 1.25rem;
+            overflow: hidden;
+        }
+        .dl-item {
             display: flex;
-            justify-content: space-between;
             align-items: center;
             gap: 2rem;
-            transition: border-color var(--transition-fast), transform var(--transition-fast);
+            padding: 2rem;
+            background: rgba(11, 15, 25, 0.5);
+            transition: background var(--transition-fast);
         }
-        .download-item-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-2px);
+        .dl-item:not(:last-child) {
+            border-bottom: 1px solid var(--border-glass);
         }
-        .download-item-info {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
+        .dl-item:hover {
+            background: rgba(30, 41, 59, 0.5);
         }
-        .download-type-icon {
-            width: 3.5rem;
-            height: 3.5rem;
+        .dl-icon-wrap {
+            width: 4rem;
+            height: 4rem;
             border-radius: 0.75rem;
-            background-color: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.2);
-            color: #ef4444;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
         }
-        .download-item-text h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 0.35rem;
+        .dl-icon-wrap.overview {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            color: var(--primary);
         }
-        .download-item-text p {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
+        .dl-icon-wrap.contracts {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            color: var(--success);
         }
-        .btn-action-download {
-            display: inline-flex;
+        .dl-icon-wrap.catalog {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            color: var(--accent);
+        }
+        .dl-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .dl-meta {
+            display: flex;
             align-items: center;
             gap: 0.5rem;
-            background-image: linear-gradient(135deg, var(--primary), var(--secondary));
-            border: none;
-            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        .dl-category-tag {
+            font-size: 0.6rem;
             font-weight: 700;
-            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 0.85rem 1.75rem;
-            border-radius: 2rem;
-            text-decoration: none;
-            transition: opacity var(--transition-fast), transform var(--transition-fast);
+            letter-spacing: 0.07em;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.2rem;
+        }
+        .dl-category-tag.overview { background: rgba(59, 130, 246, 0.15); color: var(--primary); }
+        .dl-category-tag.contracts { background: rgba(16, 185, 129, 0.15); color: var(--success); }
+        .dl-category-tag.catalog { background: rgba(139, 92, 246, 0.15); color: var(--accent); }
+        .dl-meta-sep {
+            color: var(--text-muted);
+            font-size: 0.65rem;
+        }
+        .dl-meta-detail {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+        }
+        .dl-info h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.2rem;
+        }
+        .dl-info .dl-subtitle {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.65rem;
+        }
+        .dl-info p {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            max-width: 520px;
+        }
+        .dl-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
             flex-shrink: 0;
         }
-        .btn-action-download:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
+        .btn-dl-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.7rem 1.5rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            transition: opacity 0.2s, transform 0.2s;
+            white-space: nowrap;
+        }
+        .btn-dl-download.primary-dl {
+            background-image: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+        }
+        .btn-dl-download.primary-dl:hover { opacity: 0.88; transform: scale(1.02); }
+        .btn-dl-download.preview-dl {
+            background: transparent;
+            border: 1px solid var(--border-glass);
+            color: #ffffff;
+        }
+        .btn-dl-download.preview-dl:hover {
+            border-color: #ffffff;
+            background: rgba(255,255,255,0.05);
+        }
+        .btn-dl-download svg {
+            width: 1rem;
+            height: 1rem;
+            flex-shrink: 0;
         }
 
         @media (max-width: 768px) {
-            .download-item-card {
+            .dl-item {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 1.5rem;
             }
-            .btn-action-download {
+            .dl-actions {
+                width: 100%;
+            }
+            .btn-dl-download {
                 width: 100%;
                 justify-content: center;
             }
@@ -130,75 +208,126 @@
                 <a href="../index.html#contact">Contact</a>
             </nav>
             <div class="nav-actions">
-                <button id="theme-toggle" class="btn-theme" aria-label="Toggle Light/Dark Theme">
-                    <!-- Icon replaced dynamically by script -->
-                </button>
+                <button id="theme-toggle" class="btn-theme" aria-label="Toggle Light/Dark Theme"></button>
                 <a href="../index.html#contact" class="btn btn-primary">Get Free Quote</a>
             </div>
         </div>
     </header>
 
     <main style="padding-top: 8rem;">
-        
-        <!-- Hero Section -->
-        <section class="downloads-hero scroll-reveal">
-            <span class="securing-badge" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); color: var(--primary); font-size: 0.65rem; font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 2rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem; display: inline-block;">Resource Hub</span>
+
+        <!-- Hero -->
+        <section class="dl-hero scroll-reveal">
+            <span class="dl-hero-badge">Resource Hub</span>
             <h1 class="section-title" style="font-size: 2.5rem; font-weight: 800; color: #fff; margin-bottom: 1rem;">Downloads Center</h1>
-            <p class="section-description" style="max-width: 600px; margin: 0 auto;">Access our official company publications, agreement structures, and corporate hardware catalog profiles.</p>
+            <p class="section-description" style="max-width: 580px; margin: 0 auto;">Access our official company publications, agreement structures, and corporate hardware catalog profiles.</p>
         </section>
 
-        <!-- Downloads List -->
-        <section class="downloads-container">
-            
-            <!-- Company Profile -->
-            <div class="download-item-card scroll-reveal">
-                <div class="download-item-info">
-                    <div class="download-type-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <!-- Download Items -->
+        <div class="container scroll-reveal">
+            <div class="dl-list">
+
+                <!-- Company Profile -->
+                <div class="dl-item">
+                    <div class="dl-icon-wrap overview">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
                     </div>
-                    <div class="download-item-text">
-                        <h3>Shawan Tech Company Profile</h3>
-                        <p>Detailed outline of our corporate structure, ISO alignments, IT engineering capabilities, and support workflows.</p>
+                    <div class="dl-info">
+                        <div class="dl-meta">
+                            <span class="dl-category-tag overview">Overview</span>
+                            <span class="dl-meta-sep">•</span>
+                            <span class="dl-meta-detail">3 Pages</span>
+                            <span class="dl-meta-sep">•</span>
+                            <span class="dl-meta-detail">~320 KB</span>
+                            <span class="dl-meta-sep">•</span>
+                            <span class="dl-meta-detail">Updated July 2025</span>
+                        </div>
+                        <h3>Company Profile</h3>
+                        <p class="dl-subtitle">Who We Are & What We Do</p>
+                        <p>A complete overview of Shawan Tech Solutions — our mission, service portfolio, technology partnerships, industries served, and contact details. Ideal for sharing with procurement teams.</p>
+                    </div>
+                    <div class="dl-actions">
+                        <a href="Shawan-Tech-Company-Profile.pdf" download class="btn-dl-download primary-dl">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+                            Download PDF
+                        </a>
+                        <a href="Shawan-Tech-Company-Profile.pdf" target="_blank" class="btn-dl-download preview-dl">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+                            Preview Online
+                        </a>
                     </div>
                 </div>
-                <a href="Shawan-Tech-Company-Profile.pdf" download class="btn-action-download">
-                    Download PDF
-                </a>
-            </div>
 
-            <!-- AMC Service Sheet -->
-            <div class="download-item-card scroll-reveal">
-                <div class="download-item-info">
-                    <div class="download-type-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <!-- AMC Service Sheet -->
+                <div class="dl-item">
+                    <div class="dl-icon-wrap contracts">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
                     </div>
-                    <div class="download-item-text">
-                        <h3>IT AMC & Maintenance Service Sheet</h3>
-                        <p>Technical SLAs, monthly checks checklist, remote desk availability, response times, and pricing models.</p>
+                    <div class="dl-info">
+                        <div class="dl-meta">
+                            <span class="dl-category-tag contracts">Contracts</span>
+                            <span class="dl-meta-sep">•</span>
+                            <span class="dl-meta-detail">2 Pages</span>
+                            <span class="dl-meta-sep">•</span>
+                            <span class="dl-meta-detail">~280 KB</span>
+                            <span class="dl-meta-sep">•</span>
+                            <span class="dl-meta-detail">Updated July 2025</span>
+                        </div>
+                        <h3>AMC Service Sheet</h3>
+                        <p class="dl-subtitle">Annual Maintenance Contract Plans</p>
+                        <p>Detailed breakdown of our three AMC tiers (Basic, Standard, Enterprise) including SLA commitments, coverage scope, pricing, response times, and contract terms.</p>
+                    </div>
+                    <div class="dl-actions">
+                        <a href="Shawan-Tech-AMC-Service-Sheet.pdf" download class="btn-dl-download primary-dl" style="background-image: linear-gradient(135deg, #10b981, #059669);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+                            Download PDF
+                        </a>
+                        <a href="Shawan-Tech-AMC-Service-Sheet.pdf" target="_blank" class="btn-dl-download preview-dl">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+                            Preview Online
+                        </a>
                     </div>
                 </div>
-                <a href="Shawan-Tech-AMC-Service-Sheet.pdf" download class="btn-action-download">
-                    Download PDF
-                </a>
-            </div>
 
-            <!-- Product Catalog -->
-            <div class="download-item-card scroll-reveal">
-                <div class="download-item-info">
-                    <div class="download-type-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <!-- Product Catalog -->
+                <div class="dl-item">
+                    <div class="dl-icon-wrap catalog">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                        </svg>
                     </div>
-                    <div class="download-item-text">
-                        <h3>Refurbished IT Hardware Catalog</h3>
-                        <p>Complete lists of business-grade laptops, enterprise server arrays, desktops, and printer rental fleets currently in stock.</p>
+                    <div class="dl-info">
+                        <div class="dl-meta">
+                            <span class="dl-category-tag catalog">Catalog</span>
+                            <span class="dl-meta-sep">•</span>
+                            <span class="dl-meta-detail">3 Pages</span>
+                            <span class="dl-meta-sep">•</span>
+                            <span class="dl-meta-detail">~350 KB</span>
+                            <span class="dl-meta-sep">•</span>
+                            <span class="dl-meta-detail">Updated July 2025</span>
+                        </div>
+                        <h3>Product Catalog</h3>
+                        <p class="dl-subtitle">Hardware, Rentals & IT Services</p>
+                        <p>Full catalog of refurbished laptops, desktops, workstations, monitors, printer rentals, networking equipment, genuine spare parts, and managed IT services with pricing.</p>
+                    </div>
+                    <div class="dl-actions">
+                        <a href="Shawan-Tech-Product-Catalog.pdf" download class="btn-dl-download primary-dl" style="background-image: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+                            Download PDF
+                        </a>
+                        <a href="Shawan-Tech-Product-Catalog.pdf" target="_blank" class="btn-dl-download preview-dl">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+                            Preview Online
+                        </a>
                     </div>
                 </div>
-                <a href="Shawan-Tech-Product-Catalog.pdf" download class="btn-action-download">
-                    Download PDF
-                </a>
-            </div>
 
-        </section>
+            </div>
+        </div>
 
     </main>
 
@@ -220,46 +349,30 @@
         </div>
     </footer>
 
-    <!-- Theme and Scroll Reveal Handler -->
     <script>
-        // Theme toggle logic
         const themeToggle = document.getElementById('theme-toggle');
         const currentTheme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', currentTheme);
-        
         if (themeToggle) {
-            themeToggle.innerHTML = currentTheme === 'light' 
-                ? '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 1.25rem; height: 1.25rem;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>'
-                : '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 1.25rem; height: 1.25rem;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>';
-
+            themeToggle.innerHTML = currentTheme === 'light'
+                ? '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:1.25rem;height:1.25rem;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>'
+                : '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:1.25rem;height:1.25rem;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>';
             themeToggle.addEventListener('click', () => {
-                let theme = document.documentElement.getAttribute('data-theme');
-                if (theme === 'light') {
-                    theme = 'dark';
-                    themeToggle.innerHTML = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 1.25rem; height: 1.25rem;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>';
-                } else {
-                    theme = 'light';
-                    themeToggle.innerHTML = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 1.25rem; height: 1.25rem;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>';
-                }
+                let theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
                 document.documentElement.setAttribute('data-theme', theme);
                 localStorage.setItem('theme', theme);
+                themeToggle.innerHTML = theme === 'light'
+                    ? '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:1.25rem;height:1.25rem;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>'
+                    : '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:1.25rem;height:1.25rem;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>';
             });
         }
-
-        // Scroll Reveal logic
-        const revealElements = document.querySelectorAll('.scroll-reveal');
-        const revealOnScroll = () => {
-            revealElements.forEach(el => {
-                const elementTop = el.getBoundingClientRect().top;
-                const elementVisible = 100;
-                if (elementTop < window.innerHeight - elementVisible) {
-                    el.classList.add('active');
-                }
-            });
-        };
-        window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('load', revealOnScroll);
-        revealOnScroll();
+        const revealEls = document.querySelectorAll('.scroll-reveal');
+        const doReveal = () => revealEls.forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
+        });
+        window.addEventListener('scroll', doReveal);
+        window.addEventListener('load', doReveal);
+        doReveal();
     </script>
 </body>
 </html>
