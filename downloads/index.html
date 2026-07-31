@@ -74,11 +74,11 @@
 
         /* ─── Card cover preview (mini dark mockup) ─── */
         .dl-cover {
-            height: 190px;
+            height: 240px;
             position: relative;
             display: flex;
             align-items: flex-start;
-            padding: 1.6rem 1.8rem 1rem;
+            padding: 1.4rem 1.8rem 0;
             overflow: hidden;
         }
         .dl-cover-bg {
@@ -133,7 +133,10 @@
 
         .dl-cover-text {
             position: absolute;
-            left: 1.8rem; bottom: 1rem; right: 5rem;
+            left: 1.8rem;
+            /* sit above the stats bar (approx 44px) + small gap */
+            bottom: 52px;
+            right: 5rem;
             z-index: 2;
         }
         .dl-cover-label {
@@ -147,15 +150,15 @@
         .green .dl-cover-label  { color: #1ec880; }
         .purple .dl-cover-label { color: #8c5cf5; }
         .dl-cover-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 800;
             color: #fff;
-            line-height: 1.2;
+            line-height: 1.25;
         }
         .dl-cover-sub {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             color: #698099;
-            margin-top: 0.2rem;
+            margin-top: 0.15rem;
         }
 
         /* mini stats */
