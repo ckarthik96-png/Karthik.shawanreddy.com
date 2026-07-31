@@ -1752,3 +1752,252 @@ footer {
 .modal-body-scroll p {
     margin-bottom: 1rem;
 }
+
+/* --------------------------------------------------------
+   ADDITIONAL CREDIBILITY SECTIONS (PARTNERS, WORKFLOW, DOWNLOADS, EMERGENCY)
+   -------------------------------------------------------- */
+
+/* Emergency support banner */
+.emergency-banner {
+    background-color: rgba(239, 68, 68, 0.08);
+    border-top: 1px solid rgba(239, 68, 68, 0.2);
+    border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+    padding: 0.85rem 1.5rem;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+.emergency-banner .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.emergency-banner span {
+    color: #fecaca;
+    font-weight: 500;
+}
+.emergency-banner strong {
+    color: #ffffff;
+}
+.emergency-banner .btn-emergency {
+    background-color: #e11d48;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.45rem 0.9rem;
+    border-radius: 0.25rem;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+.emergency-banner .btn-emergency:hover {
+    background-color: #be123c;
+    transform: scale(1.03);
+}
+
+/* OEM Partners Section */
+.partners-section {
+    padding: 5rem 1.5rem;
+    background-color: rgba(3, 6, 17, 0.3);
+    border-bottom: 1px solid var(--border-glass);
+    position: relative;
+    z-index: 10;
+}
+.partners-grid {
+    display: grid;
+    grid-template-cols: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1.5rem;
+    align-items: center;
+    justify-items: center;
+    margin-top: 3rem;
+}
+.partner-logo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    width: 100%;
+    border-radius: 0.75rem;
+    background-color: rgba(11, 15, 25, 0.8);
+    border: 1px solid var(--border-glass);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+.partner-logo-card:hover {
+    border-color: rgba(59, 130, 246, 0.45);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.05);
+    background-color: rgba(17, 24, 39, 0.5);
+}
+.partner-logo-card svg {
+    margin-bottom: 0.75rem;
+    transition: transform var(--transition-fast);
+}
+.partner-logo-card:hover svg {
+    transform: scale(1.1);
+}
+.partner-logo-card span {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Workflow Section */
+.workflow-section {
+    padding: 5rem 1.5rem;
+    border-bottom: 1px solid var(--border-glass);
+    position: relative;
+    z-index: 10;
+}
+.workflow-grid {
+    display: grid;
+    grid-template-cols: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+.workflow-step-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.workflow-number {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #0b0f19;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.05);
+}
+.workflow-step-card h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.workflow-step-card p {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    max-width: 140px;
+    margin: 0 auto;
+}
+
+/* Downloads strip */
+.downloads-strip {
+    background-color: rgba(17, 24, 39, 0.6);
+    border-top: 1px solid var(--border-glass);
+    border-bottom: 1px solid var(--border-glass);
+    padding: 2rem 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+.downloads-strip .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.downloads-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.downloads-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.75rem;
+    background-color: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+.downloads-text h4 {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.15rem;
+}
+.downloads-text p {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+.downloads-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+.btn-download-pdf {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+.btn-download-pdf:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary);
+}
+.btn-download-pdf svg {
+    width: 0.85rem;
+    height: 0.85rem;
+}
+.btn-download-pdf.primary-dl {
+    background-image: linear-gradient(135deg, var(--primary), var(--accent));
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.btn-download-pdf.primary-dl:hover {
+    background-image: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+@media (max-width: 900px) {
+    .downloads-strip .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+@media (max-width: 640px) {
+    .downloads-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn-download-pdf {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
