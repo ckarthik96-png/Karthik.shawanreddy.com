@@ -336,6 +336,96 @@
             .job-card-top { flex-direction: column; gap: 0.5rem; }
             .job-listing-card { padding: 1.5rem; }
         }
+
+        /* ─── File Upload Field ─── */
+        .file-upload-wrap {
+            position: relative;
+            border: 1.5px dashed var(--border-glass);
+            border-radius: 0.75rem;
+            padding: 1rem 1.2rem;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            background: rgba(255,255,255,0.025);
+        }
+        .file-upload-wrap:hover, .file-upload-wrap.has-file {
+            border-color: rgba(38,120,245,0.55);
+            background: rgba(38,120,245,0.05);
+        }
+        .file-upload-wrap input[type="file"] {
+            position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+        }
+        .file-upload-icon {
+            width: 2.25rem; height: 2.25rem; border-radius: 0.5rem;
+            background: rgba(38,120,245,0.12);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; color: #60a5fa;
+        }
+        .file-upload-text { flex: 1; }
+        .file-upload-text p {
+            font-size: 0.78rem; font-weight: 600; color: #fff; margin: 0 0 0.15rem;
+        }
+        .file-upload-text span {
+            font-size: 0.65rem; color: var(--text-muted);
+        }
+        .file-name-display {
+            font-size: 0.7rem; color: #60a5fa; font-weight: 600;
+            margin-top: 0.4rem; display: none;
+        }
+
+        /* ─── Don't See Your Role card ─── */
+        .no-role-section {
+            max-width: 680px;
+            margin: 0 auto 6rem;
+            padding: 0 1.5rem;
+        }
+        .no-role-card {
+            background: rgba(11,15,28,0.75);
+            border: 1px solid var(--border-glass);
+            border-radius: 1.25rem;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .no-role-card::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse 60% 40% at 50% 110%, rgba(38,120,245,0.1) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .no-role-card h3 {
+            font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem;
+            position: relative;
+        }
+        .no-role-card p {
+            font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7;
+            max-width: 420px; margin: 0 auto 2rem; position: relative;
+        }
+        .btn-email-resume {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: transparent;
+            border: 1px solid var(--border-glass);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            padding: 0.8rem 1.8rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .btn-email-resume:hover {
+            border-color: rgba(96,165,250,0.5);
+            background: rgba(38,120,245,0.08);
+        }
     </style>
 </head>
 <body>
@@ -546,6 +636,20 @@
                         <label class="form-label" for="candidate-note">Cover Note</label>
                         <textarea class="form-textarea" id="candidate-note" placeholder="Tell us briefly about your IT background and experience..."></textarea>
                     </div>
+                    <div class="form-field">
+                        <label class="form-label">Attach Resume / CV <span style="font-weight:400;color:var(--text-muted);text-transform:none;letter-spacing:0;">(PDF or DOCX, max 10 MB)</span></label>
+                        <div class="file-upload-wrap" id="file-upload-wrap">
+                            <input type="file" id="candidate-file" accept=".pdf,.doc,.docx" onchange="handleFile(this)">
+                            <div class="file-upload-icon">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 002.112 2.13"/></svg>
+                            </div>
+                            <div class="file-upload-text">
+                                <p>Click to attach your resume</p>
+                                <span>PDF, DOC or DOCX supported</span>
+                                <div class="file-name-display" id="file-name-display"></div>
+                            </div>
+                        </div>
+                    </div>
                     <button type="submit" class="btn-submit" id="submit-btn">
                         Submit via WhatsApp
                         <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
@@ -554,6 +658,18 @@
                 <div class="form-success" id="candidateResponse">
                     ✔ Application processed! Opening WhatsApp to send your details…
                 </div>
+            </div>
+        </section>
+
+        <!-- ─── Don't See Your Role ─── -->
+        <section class="no-role-section scroll-reveal">
+            <div class="no-role-card">
+                <h3>Don't See Your Role?</h3>
+                <p>We are always looking for certified technicians, hardware engineers, and database administrators. Send your CV to our sales coordinators.</p>
+                <a href="mailto:shawan@shawanreddy.com?subject=Job%20Application%20-%20General%20Enquiry&body=Hi%20Shawan%20Tech%20Team%2C%0A%0APlease%20find%20my%20resume%20attached.%0A%0AName%3A%0APhone%3A%0ARole%20interested%20in%3A%0A%0AThank%20you." class="btn-email-resume" id="email-resume-btn">
+                    <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+                    Email Your Resume
+                </a>
             </div>
         </section>
 
@@ -576,18 +692,34 @@
         </div>
     </footer>
 
-    <script>
+        // File upload handler
+        function handleFile(input) {
+            const wrap = document.getElementById('file-upload-wrap');
+            const display = document.getElementById('file-name-display');
+            if (input.files && input.files[0]) {
+                const file = input.files[0];
+                const sizeMB = (file.size / (1024 * 1024)).toFixed(1);
+                display.textContent = '📎 ' + file.name + ' (' + sizeMB + ' MB)';
+                display.style.display = 'block';
+                wrap.classList.add('has-file');
+                wrap.querySelector('p').textContent = 'Resume selected';
+            }
+        }
+
         // Form submit → WhatsApp
         document.getElementById('candidateForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = document.getElementById('submit-btn');
             btn.disabled = true; btn.innerText = 'Submitting…';
+
             const n = document.getElementById('candidate-name').value;
             const p = document.getElementById('candidate-phone').value;
             const pos = document.getElementById('candidate-pos').value;
             const r = document.getElementById('candidate-resume').value;
             const note = document.getElementById('candidate-note').value;
-            const msg = `*New Candidate Application*\n\n👤 *Name:* ${n}\n📞 *Phone:* ${p}\n💼 *Position:* ${pos}\n📄 *Resume:* ${r}\n\n✉️ *Cover Note:*\n${note}`;
+            const fileInput = document.getElementById('candidate-file');
+            const fileName = fileInput.files && fileInput.files[0] ? fileInput.files[0].name : 'Not attached';
+            const msg = `*New Candidate Application*\n\n👤 *Name:* ${n}\n📞 *Phone:* ${p}\n💼 *Position:* ${pos}\n📄 *Resume Link:* ${r || 'Not provided'}\n📎 *Attached File:* ${fileName}\n\n✉️ *Cover Note:*\n${note}`;
             const wa = `https://wa.me/919791271479?text=${encodeURIComponent(msg)}`;
             setTimeout(() => {
                 btn.disabled = false; btn.innerText = 'Submit via WhatsApp';
