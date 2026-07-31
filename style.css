@@ -1812,7 +1812,7 @@ footer {
 }
 .partners-grid {
     display: grid;
-    grid-template-cols: repeat(auto-fit, minmax(130px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 1.5rem;
     align-items: center;
     justify-items: center;
@@ -1859,7 +1859,7 @@ footer {
 }
 .workflow-grid {
     display: grid;
-    grid-template-cols: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 2rem;
     margin-top: 4rem;
 }
