@@ -201,7 +201,7 @@ header.scrolled {
     align-items: center;
     gap: 0.75rem;
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.65rem;
     font-weight: 800;
     color: var(--text-primary);
     white-space: nowrap;
@@ -239,7 +239,7 @@ header.scrolled {
 }
 
 .nav-links a {
-    font-size: 0.88rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--text-secondary);
     white-space: nowrap;
