@@ -561,6 +561,16 @@
             });
         });
 
+        // Auto-filter by URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const filterParam = urlParams.get('filter');
+        if (filterParam) {
+            const targetBtn = document.querySelector(`.filter-btn[data-filter="${filterParam}"]`);
+            if (targetBtn) {
+                targetBtn.click();
+            }
+        }
+
         // Theme toggle logic
         const themeToggle = document.getElementById('theme-toggle');
         const currentTheme = localStorage.getItem('theme') || 'dark';
