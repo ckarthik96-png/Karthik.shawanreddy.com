@@ -1,32 +1,336 @@
 %PDF-1.4
+%����
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+<< /Type /Pages /Kids [3 0 R 4 0 R] /Count 2 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << >> /Contents 4 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 7 0 R /F2 8 0 R >> >> >>
 endobj
-4 0 obj
-<< /Length 75 >>
+5 0 obj
+<< /Length 3594 >>
 stream
+0.9 0.9 0.9 RG
+1 w
 BT
-/F1 24 Tf
-100 700 Td
-(Shawan Tech Solutions - AMC Service Sheet) Tj
+/F2 22 Tf
+72 760 Td
+0 0 0 rg
+(SHAWAN TECH SOLUTIONS) Tj
+-72 -760 Td
+/F1 12 Tf
+72 730 Td
+0 0 0 rg
+(Annual Maintenance Contract \(AMC\) — Service Sheet) Tj
+-72 -730 Td
+/F1 1 Tf
+50 715 Td
+0 0 0 rg
+(────────────────────────────────────────────────────────────────────────────────) Tj
+-50 -715 Td
+/F2 13 Tf
+72 690 Td
+0 0 0 rg
+(What is an AMC?) Tj
+-72 -690 Td
+/F1 10 Tf
+72 670 Td
+0 0 0 rg
+(An Annual Maintenance Contract \(AMC\) is a service agreement that ensures your IT) Tj
+-72 -670 Td
+/F1 10 Tf
+72 655 Td
+0 0 0 rg
+(infrastructure is maintained, monitored, and repaired throughout the year — for a) Tj
+-72 -655 Td
+/F1 10 Tf
+72 640 Td
+0 0 0 rg
+(fixed, predictable fee. Avoid surprise repair costs and unplanned downtime.) Tj
+-72 -640 Td
+/F2 14 Tf
+72 610 Td
+0 0 0 rg
+(AMC Tiers) Tj
+-72 -610 Td
+/F1 1 Tf
+50 595 Td
+0 0 0 rg
+(────────────────────────────────────────────────────────────────────────────────) Tj
+-50 -595 Td
+/F2 13 Tf
+72 575 Td
+0 0 0 rg
+(BASIC PLAN) Tj
+-72 -575 Td
+/F1 10 Tf
+72 560 Td
+0 0 0 rg
+(Coverage:    Software support, helpdesk calls, quarterly preventive maintenance) Tj
+-72 -560 Td
+/F1 10 Tf
+72 545 Td
+0 0 0 rg
+(Response:    Next business day \(NBD\)) Tj
+-72 -545 Td
+/F1 10 Tf
+72 530 Td
+0 0 0 rg
+(On-site:     2 visits per quarter included) Tj
+-72 -530 Td
+/F1 10 Tf
+72 515 Td
+0 0 0 rg
+(Hardware:    Not included \(labour only\)) Tj
+-72 -515 Td
+/F2 11 Tf
+72 500 Td
+0 0 0 rg
+(Starting from Rs. 2,999/month per device) Tj
+-72 -500 Td
+/F1 1 Tf
+50 487 Td
+0 0 0 rg
+(────────────────────────────────────────────────────────────────────────────────) Tj
+-50 -487 Td
+/F2 13 Tf
+72 467 Td
+0 0 0 rg
+(STANDARD PLAN) Tj
+-72 -467 Td
+/F1 10 Tf
+72 452 Td
+0 0 0 rg
+(Coverage:    Hardware + software, monthly preventive maintenance, priority helpdesk) Tj
+-72 -452 Td
+/F1 10 Tf
+72 437 Td
+0 0 0 rg
+(Response:    4-hour SLA on business days) Tj
+-72 -437 Td
+/F1 10 Tf
+72 422 Td
+0 0 0 rg
+(On-site:     Monthly visits + unlimited emergency calls) Tj
+-72 -422 Td
+/F1 10 Tf
+72 407 Td
+0 0 0 rg
+(Hardware:    Spare parts at cost price \(labour covered\)) Tj
+-72 -407 Td
+/F2 11 Tf
+72 392 Td
+0 0 0 rg
+(Starting from Rs. 5,999/month per device) Tj
+-72 -392 Td
+/F1 1 Tf
+50 379 Td
+0 0 0 rg
+(────────────────────────────────────────────────────────────────────────────────) Tj
+-50 -379 Td
+/F2 13 Tf
+72 359 Td
+0 0 0 rg
+(ENTERPRISE PLAN) Tj
+-72 -359 Td
+/F1 10 Tf
+72 344 Td
+0 0 0 rg
+(Coverage:    Full hardware + software + network infrastructure) Tj
+-72 -344 Td
+/F1 10 Tf
+72 329 Td
+0 0 0 rg
+(Response:    2-hour SLA, 24x7 including weekends & holidays) Tj
+-72 -329 Td
+/F1 10 Tf
+72 314 Td
+0 0 0 rg
+(On-site:     Dedicated engineer, bi-weekly audits) Tj
+-72 -314 Td
+/F1 10 Tf
+72 299 Td
+0 0 0 rg
+(Hardware:    All genuine parts covered under contract) Tj
+-72 -299 Td
+/F2 11 Tf
+72 284 Td
+0 0 0 rg
+(Starting from Rs. 12,999/month per device) Tj
+-72 -284 Td
+/F1 9 Tf
+72 250 Td
+0 0 0 rg
+(Page 1 of 2   —   Shawan Tech AMC Service Sheet) Tj
+-72 -250 Td
 ET
+
 endstream
 endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 6 0 R /Resources << /Font << /F1 7 0 R /F2 8 0 R >> >> >>
+endobj
+6 0 obj
+<< /Length 2693 >>
+stream
+0.9 0.9 0.9 RG
+1 w
+BT
+/F2 18 Tf
+72 760 Td
+0 0 0 rg
+(What's Covered) Tj
+-72 -760 Td
+/F1 1 Tf
+50 745 Td
+0 0 0 rg
+(────────────────────────────────────────────────────────────────────────────────) Tj
+-50 -745 Td
+/F2 11 Tf
+72 720 Td
+0 0 0 rg
+(Hardware Maintenance) Tj
+-72 -720 Td
+/F1 10 Tf
+72 705 Td
+0 0 0 rg
+(  •  Desktop & Laptop Servicing       •  Printer & Peripheral Maintenance) Tj
+-72 -705 Td
+/F1 10 Tf
+72 690 Td
+0 0 0 rg
+(  •  Server & NAS Maintenance         •  Networking Equipment Upkeep) Tj
+-72 -690 Td
+/F1 10 Tf
+72 675 Td
+0 0 0 rg
+(  •  UPS & Power Equipment            •  CCTV & Access Control Systems) Tj
+-72 -675 Td
+/F2 11 Tf
+72 655 Td
+0 0 0 rg
+(Software Support) Tj
+-72 -655 Td
+/F1 10 Tf
+72 640 Td
+0 0 0 rg
+(  •  OS Installation & Updates        •  Antivirus & Security Patching) Tj
+-72 -640 Td
+/F1 10 Tf
+72 625 Td
+0 0 0 rg
+(  •  Microsoft 365 Administration     •  ERP / CRM Support) Tj
+-72 -625 Td
+/F1 10 Tf
+72 610 Td
+0 0 0 rg
+(  •  Data Backup Configuration        •  Remote Desktop Support) Tj
+-72 -610 Td
+/F2 11 Tf
+72 585 Td
+0 0 0 rg
+(Network & Infrastructure) Tj
+-72 -585 Td
+/F1 10 Tf
+72 570 Td
+0 0 0 rg
+(  •  Router & Switch Configuration    •  Firewall Rule Management) Tj
+-72 -570 Td
+/F1 10 Tf
+72 555 Td
+0 0 0 rg
+(  •  VPN Monitoring                   •  Wi-Fi Optimization) Tj
+-72 -555 Td
+/F2 13 Tf
+72 530 Td
+0 0 0 rg
+(SLA Response Commitments) Tj
+-72 -530 Td
+/F1 10 Tf
+72 515 Td
+0 0 0 rg
+(  Priority 1 \(System Down\):    2 hours  \(Enterprise\) / 4 hours  \(Standard\)) Tj
+-72 -515 Td
+/F1 10 Tf
+72 500 Td
+0 0 0 rg
+(  Priority 2 \(Degraded\):       4 hours  \(Enterprise\) / NBD      \(Standard\)) Tj
+-72 -500 Td
+/F1 10 Tf
+72 485 Td
+0 0 0 rg
+(  Priority 3 \(Minor Issue\):    NBD      \(All tiers\)) Tj
+-72 -485 Td
+/F2 13 Tf
+72 460 Td
+0 0 0 rg
+(Add-On Services) Tj
+-72 -460 Td
+/F1 10 Tf
+72 445 Td
+0 0 0 rg
+(  •  Data Recovery Assistance \(discounted rate for AMC clients\)) Tj
+-72 -445 Td
+/F1 10 Tf
+72 430 Td
+0 0 0 rg
+(  •  Cloud Backup & Disaster Recovery Monitoring) Tj
+-72 -430 Td
+/F1 10 Tf
+72 415 Td
+0 0 0 rg
+(  •  Cybersecurity Vulnerability Scan \(quarterly\)) Tj
+-72 -415 Td
+/F2 13 Tf
+72 395 Td
+0 0 0 rg
+(Contact to Enrol) Tj
+-72 -395 Td
+/F1 10 Tf
+72 375 Td
+0 0 0 rg
+(  Email:    shawan@shawanreddy.com) Tj
+-72 -375 Td
+/F1 10 Tf
+72 360 Td
+0 0 0 rg
+(  Phone:   +91 97912 71479) Tj
+-72 -360 Td
+/F1 10 Tf
+72 345 Td
+0 0 0 rg
+(  WhatsApp: +91 93534 27314) Tj
+-72 -345 Td
+/F1 9 Tf
+72 250 Td
+0 0 0 rg
+(Page 2 of 2   —   Shawan Tech AMC Service Sheet) Tj
+-72 -250 Td
+ET
+
+endstream
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+8 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
 xref
-0 5
+0 9
 0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000222 00000 n 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000127 00000 n 
+0000003909 00000 n 
+0000000263 00000 n 
+0000004045 00000 n 
+0000006790 00000 n 
+0000006887 00000 n 
 trailer
-<< /Size 5 >>
+<< /Size 9 /Root 1 0 R >>
 startxref
-348
+6989
 %%EOF
