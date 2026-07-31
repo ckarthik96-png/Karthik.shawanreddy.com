@@ -2169,4 +2169,120 @@ footer {
     }
 }
 
+/* Refurbished IT Assets Showcase Landing Section */
+.refurbished-landing-section {
+    padding: 6rem 1.5rem;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-glass);
+    position: relative;
+    z-index: 10;
+}
+.refurbished-landing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 3rem auto 3.5rem;
+}
+.refurbished-landing-card {
+    background-color: rgba(17, 24, 39, 0.4);
+    border: 1px solid var(--border-glass);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+.refurbished-landing-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+.refurbished-badge-tag {
+    align-self: flex-start;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 0.25rem;
+    background-color: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    color: var(--success);
+}
+.refurbished-landing-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+.refurbished-landing-card p {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+.refurbished-divider {
+    height: 1px;
+    background-color: var(--border-glass);
+    width: 100%;
+}
+.refurbished-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.refurbished-certified-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.refurbished-quote-link {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+.refurbished-quote-link:hover {
+    color: var(--accent);
+}
+
+.refurbished-browse-btn-container {
+    display: flex;
+    justify-content: center;
+}
+.btn-browse-catalog {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    border: 1px solid var(--border-glass);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.85rem 2rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+.btn-browse-catalog:hover {
+    border-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 1024px) {
+    .refurbished-landing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .refurbished-landing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 
