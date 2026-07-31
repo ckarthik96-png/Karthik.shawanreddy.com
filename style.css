@@ -232,13 +232,14 @@ header.scrolled {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 1.75rem;
+    gap: 1rem;
 }
 
 .nav-links a {
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-size: 0.8rem;
+    font-weight: 600;
     color: var(--text-secondary);
+    white-space: nowrap;
 }
 
 .nav-links a:hover, .nav-links a.active {
