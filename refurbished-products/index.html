@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refurbished IT Hardware & Computer Rentals | Shawan Tech Solutions</title>
+    <meta name="description" content="Browse our inventory of business-grade refurbished laptops, enterprise desktops, workstations, monitors, and printer rentals backed by Shawan Tech warranty support.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'><circle cx='50' cy='50' r='42' stroke='%232563eb' stroke-width='8' stroke-dasharray='25 12' /><circle cx='50' cy='50' r='28' stroke='%233b82f6' stroke-width='4' /><polygon points='50 36, 62 43, 62 57, 50 64, 38 57, 38 43' fill='%232563eb' /><circle cx='50' cy='50' r='5' fill='%23ffffff' /></svg>">
+    <style>
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            background-color: rgba(17, 24, 39, 0.4);
+            border: 1px solid var(--border-glass);
+            transition: all var(--transition-fast);
+        }
+        .product-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-glow);
+        }
+        .badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 0.25rem;
+            text-transform: uppercase;
+        }
+        .badge-brand { background: rgba(59, 130, 246, 0.1); color: var(--primary); }
+        .badge-condition { background: rgba(16, 185, 129, 0.1); color: var(--success); }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient background glows -->
+    <div class="ambient-glow glow-primary"></div>
+    <div class="ambient-glow glow-secondary"></div>
+
+    <!-- Header / Sticky Navigation -->
+    <header class="scrolled">
+        <div class="container nav-container">
+            <a href="../#home" class="logo">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <circle cx="50" cy="50" r="42" stroke="var(--primary)" stroke-width="7" stroke-dasharray="25 12 5 12" />
+                    <circle cx="50" cy="50" r="28" stroke="var(--secondary)" stroke-width="4" stroke-dasharray="35 15" />
+                    <polygon points="50 36, 62 43, 62 57, 50 64, 38 57, 38 43" fill="var(--primary)" />
+                </svg>
+                Shawan Tech
+            </a>
+            <nav class="nav-links">
+                <a href="../#home">Home</a>
+                <a href="../#about">About</a>
+                <a href="../#services">Services</a>
+                <a href="../#solutions">Solutions</a>
+                <a href="../#portfolio">Portfolio</a>
+                <a href="../#pricing">Pricing</a>
+                <a href="../#faq">FAQ</a>
+                <a href="../#contact">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="../#contact" class="btn btn-primary">Get Free Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 8rem; padding-bottom: 6rem;">
+        
+        <!-- Header -->
+        <section class="container" style="margin-bottom: 3rem;">
+            <div class="section-header" style="text-align: center;">
+                <span class="section-subtitle">Certified Hardware</span>
+                <h1 class="section-title">Refurbished IT Hardware</h1>
+                <p class="section-description">Sourced from top enterprise fleets. Every device undergoes a strict 25-point hardware diagnostic test and comes backed by Shawan Tech warranty support.</p>
+            </div>
+        </section>
+
+        <!-- Categories Filters -->
+        <section class="container">
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Items</button>
+                <button class="filter-btn" data-filter="laptops">Business Laptops</button>
+                <button class="filter-btn" data-filter="desktops">Desktops & AIO</button>
+                <button class="filter-btn" data-filter="workstations">Workstations</button>
+                <button class="filter-btn" data-filter="monitors">Monitors</button>
+                <button class="filter-btn" data-filter="printers">Printer Rentals</button>
+                <button class="filter-btn" data-filter="spares">Genuine Spares</button>
+            </div>
+
+            <!-- Products Catalog Grid -->
+            <div class="catalog-grid" id="catalogGrid">
+                <!-- Laptop 1 -->
+                <div class="product-card" data-category="laptops">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">Dell</span>
+                            <span class="badge badge-condition">Grade A++ (Excellent)</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Dell Latitude 7490</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">Intel Core i5 (8th Gen) | 16GB RAM | 256GB SSD | 14" FHD</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">6 Months Support</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">INR 18,500 approx</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20Dell%20Latitude%207490." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Laptop 2 -->
+                <div class="product-card" data-category="laptops">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">Lenovo</span>
+                            <span class="badge badge-condition">Grade A+ (Premium)</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Lenovo ThinkPad T480s</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">Intel Core i7 (8th Gen) | 16GB RAM | 512GB SSD | 14" FHD</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">6 Months Support</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">INR 22,000 approx</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20Lenovo%20ThinkPad%20T480s." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Laptop 3 -->
+                <div class="product-card" data-category="laptops">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">HP</span>
+                            <span class="badge badge-condition">Grade A (Good)</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">HP EliteBook 840 G5</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">Intel Core i5 (8th Gen) | 16GB RAM | 512GB SSD | 14" FHD Touch</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">6 Months Support</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">INR 19,800 approx</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20HP%20EliteBook%20840%20G5." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Laptop 4 -->
+                <div class="product-card" data-category="laptops">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">Apple</span>
+                            <span class="badge badge-condition">Grade A++ (Like New)</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Apple MacBook Pro 2019</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">Intel Core i7 | 16GB RAM | 512GB SSD | 15.4" Retina | Touchbar</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">6 Months Support</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">INR 38,000 approx</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20Apple%20MacBook%20Pro%202019." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Desktop 1 -->
+                <div class="product-card" data-category="desktops">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">Dell</span>
+                            <span class="badge badge-condition">Grade A+ (Business)</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Dell OptiPlex 7050 SFF</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">Intel Core i7 (7th Gen) | 16GB RAM | 512GB SSD | Win 10 Pro</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">6 Months Support</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">INR 14,500 approx</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20Dell%20OptiPlex%207050%20SFF." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Desktop 2 -->
+                <div class="product-card" data-category="desktops">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">Lenovo</span>
+                            <span class="badge badge-condition">Grade A (Clean)</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Lenovo ThinkCentre M710q Tiny</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">Intel Core i5 (7th Gen) | 8GB RAM | 256GB SSD | Micro Form Factor</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">6 Months Support</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">INR 11,000 approx</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20Lenovo%20ThinkCentre%20M710q%20Tiny." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Workstation 1 -->
+                <div class="product-card" data-category="workstations">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">HP</span>
+                            <span class="badge badge-condition">Grade A+ (Enterprise)</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">HP Z240 Workstation</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">Intel Xeon E3-1225 v5 | 32GB RAM | 512GB SSD + 1TB HDD | NVIDIA Quadro</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">6 Months Support</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">INR 26,000 approx</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20HP%20Z240%20Workstation." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Monitor 1 -->
+                <div class="product-card" data-category="monitors">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">Dell</span>
+                            <span class="badge badge-condition">Grade A++ (Scratchless)</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Dell 24" Professional Monitor P2419H</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">24-Inch IPS Panel | Full HD (1080p) | HDMI, DisplayPort, VGA</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">3 Months Support</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">INR 6,500 approx</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20Dell%2024%22%20Monitor%20P2419H." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Spares 1 -->
+                <div class="product-card" data-category="spares">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">Samsung</span>
+                            <span class="badge badge-condition">Brand New Box Pack</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Samsung 870 EVO 500GB SSD</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">2.5" SATA III Internal SSD | Read speed up to 560MB/s</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">Manufacturer Warranty</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">Inquire Price</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20Samsung%20870%20EVO%20500GB%20SSD." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Spares 2 -->
+                <div class="product-card" data-category="spares">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">Kingston</span>
+                            <span class="badge badge-condition">Brand New Box Pack</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Kingston 8GB DDR4 Laptop RAM</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">2666MHz DDR4 Non-ECC SODIMM Laptop Memory Module</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">Manufacturer Warranty</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">Inquire Price</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20Kingston%208GB%20DDR4%20Laptop%20RAM." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Printer 1 -->
+                <div class="product-card" data-category="printers">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">HP</span>
+                            <span class="badge badge-condition">Office Ready</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">HP LaserJet Pro MFP M428fdw</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">Monochrome Laser | Print, Scan, Copy, Fax | Auto Duplex | 40 ppm | Wi-Fi</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">Maintenance Included</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">₹1,499 / month</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20HP%20LaserJet%20Pro%20MFP%20M428fdw." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Printer 2 -->
+                <div class="product-card" data-category="printers">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">Epson</span>
+                            <span class="badge badge-condition">Office Ready</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Epson EcoTank L3250 Color</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">Color InkTank | Print, Scan, Copy | Wireless | High Page Yield</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">Maintenance Included</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">₹999 / month</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20Epson%20EcoTank%20L3250%20Color%20MFP." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Printer 3 -->
+                <div class="product-card" data-category="printers">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">Canon</span>
+                            <span class="badge badge-condition">Office Ready</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Canon imageCLASS MF244dw</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">Monochrome Laser MFP | Print, Scan, Copy | 27 ppm | Auto Duplex | Network Ready</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">Maintenance Included</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">₹1,299 / month</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20Canon%20imageCLASS%20MF244dw." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Printer 4 -->
+                <div class="product-card" data-category="printers">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">HP</span>
+                            <span class="badge badge-condition">Office Ready</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">HP LaserJet Enterprise M507dn</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">Monochrome Laser | 45 ppm | Auto Duplex | Large 550-sheet Tray</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">Maintenance Included</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">₹2,499 / month</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20HP%20LaserJet%20Enterprise%20M507dn." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Printer 5 -->
+                <div class="product-card" data-category="printers">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">Brother</span>
+                            <span class="badge badge-condition">Office Ready</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Brother HL-L2321D Laser Printer</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">Monochrome Laser | Auto Duplex | 30 ppm | USB | Compact Desktop</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">Maintenance Included</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">₹899 / month</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20Brother%20HL-L2321D." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Printer 6 -->
+                <div class="product-card" data-category="printers">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">Brother</span>
+                            <span class="badge badge-condition">Office Ready</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Brother MFC-L2715DW Laser</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">Monochrome Laser MFP | Print, Scan, Copy, Fax | Wi-Fi | Auto Duplex | 34 ppm</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">Maintenance Included</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">₹1,199 / month</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20Brother%20MFC-L2715DW." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Printer 7 -->
+                <div class="product-card" data-category="printers">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge badge-brand">Brother</span>
+                            <span class="badge badge-condition">Office Ready</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Brother DCP-L3551CDW Color</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">Color Laser MFP | Print, Scan, Copy | Wi-Fi | Auto Duplex | 22 ppm</p>
+                        <div style="border-top: 1px solid var(--border-glass); padding-top: 0.75rem; display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted);">
+                            <span>Warranty:</span>
+                            <span style="color: #fff; font-weight: 600;">Maintenance Included</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6rem; color: var(--text-muted); display: block;">Est. Cost:</span>
+                            <span style="font-size: 0.85rem; font-weight: 700; color: #fff;">₹1,799 / month</span>
+                        </div>
+                        <a href="https://wa.me/919791271479?text=Hello%20Shawan%20Tech%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20the%20Brother%20DCP-L3551CDW." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.7rem; border-radius: 0.5rem;">Request Quote</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: #030611; padding: 4rem 1.5rem 2rem; border-top: 1px solid var(--border-glass); position: relative; z-index: 10;">
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto 3rem;">
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <h4 style="font-size: 1rem; font-weight: 700; color: #ffffff;">Shawan Tech Solutions</h4>
+                <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.6;">Empowering commercial enterprises with certified IT support workflows, genuine hardware components, and enterprise protection.</p>
+            </div>
+            <div>
+                <h4 style="font-size: 0.8rem; font-weight: 700; color: #ffffff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem;">Contact Us</h4>
+                <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0.5rem;">Email: <a href="mailto:shawan@shawanreddy.com" style="color: var(--primary);">shawan@shawanreddy.com</a></p>
+                <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.6;">Phone: <a href="tel:+919791271479" style="color: var(--primary);">+91 97912 71479</a></p>
+            </div>
+        </div>
+        <div class="container" style="border-top: 1px solid var(--border-glass); padding-top: 2rem; text-align: center; max-width: 1200px; margin: 0 auto;">
+            <p style="font-size: 0.75rem; color: var(--text-muted);">© 2026 Shawan Tech Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Filter script logic -->
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.product-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const val = btn.getAttribute('data-filter');
+                cards.forEach(card => {
+                    if (val === 'all' || card.getAttribute('data-category') === val) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
