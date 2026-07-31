@@ -192,6 +192,8 @@ header.scrolled {
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    max-width: 1440px;
+    width: 100%;
 }
 
 .logo {
@@ -199,9 +201,10 @@ header.scrolled {
     align-items: center;
     gap: 0.75rem;
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 800;
     color: var(--text-primary);
+    white-space: nowrap;
 }
 
 .logo svg {
@@ -232,14 +235,15 @@ header.scrolled {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.25rem;
 }
 
 .nav-links a {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
     color: var(--text-secondary);
     white-space: nowrap;
+    transition: color var(--transition-fast);
 }
 
 .nav-links a:hover, .nav-links a.active {
